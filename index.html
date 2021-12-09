@@ -1,12 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script src="index.js" type="module"></script>
 </head>
+
 <body>
-  mini-vue
+  <div id="app">
+    {{text}}
+    <div v-on:click="handlerClick" v-bind:style="style">
+      {{clickInfo}}
+    </div>
+    <img v-bind:src="src">
+    <div v-text="text"></div>
+    <div v-html="html"></div>
+    <input type="text" v-model="text">
+    <div>
+      <div>
+        <div>{{clickInfo}}</div>
+        <div v-text="text"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- todo：去支持对象和数组 -->
+  <div v-text="obj.name"></div>
+  <div v-text="arr[1]"></div>
+
 </body>
+
 </html>
